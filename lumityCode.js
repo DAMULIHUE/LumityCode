@@ -48,6 +48,7 @@ function criptografar(){
         }else if (caracterInvalid == 0){
             console.log(`insira um valor válido: ${i[1]}`);
             result = "";
+            document.getElementById("texto").value = "";
             caracterInvalid++;
         }
     });
@@ -57,7 +58,7 @@ function descriptografar(){
 
     this.frase = document.getElementById("texto").value;
     let entries = Object.entries(alfabeto).map(([key, val]) => [val, key]);
-    let graphemes = splitter.splitGraphemes(frase);
+    let graphemes = splitter.splitGraphemes(this.frase);
     let alfabetoEmoji = Object.fromEntries(entries);
     
     graphemes.forEach(i =>{
@@ -67,19 +68,10 @@ function descriptografar(){
         }else if (caracterInvalid == 0){
             console.log(`insira um valor válido: ${i}`);
             result = "";
+            document.getElementById("texto").value = "";
             caracterInvalid++;
         }
     });
-}
-
-function criptografarDescrip(){
-    [result, this.frase] = [this.frase, result];
-    cripDesc = !cripDesc;
-    //1 = desc
-    //0 = crip
-    document.getElementById("testelegal").innerText = cripDesc;
-    document.getElementById("parag").innerText = result;
-    document.getElementById("texto").value = this.frase;
 }
 
 function input(){
@@ -94,9 +86,20 @@ function input(){
     document.getElementById("parag").innerText = result;
 }
 
+function criptografarDescrip(){
+    cripDesc = !cripDesc;
+    //1 = desc
+    //0 = crip
+    document.getElementById("testelegal").innerText = cripDesc;
+
+    document.getElementById("texto").value = result;
+    input();
+}
+
 function apagar(){
     document.getElementById("parag").innerText = "";
     document.getElementById("texto").value = "";
     result = "";
+    this.frase = "";
     caracterInvalid = 0;
 }
