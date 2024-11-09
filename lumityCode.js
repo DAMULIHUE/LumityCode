@@ -84,21 +84,3 @@ function inputDesc(){
 
     document.getElementById("texto1").value = descriptografar();
 }
-
-/*function criptografarDescrip(){
-    cripDesc = !cripDesc;
-    //1 = desc
-    //0 = crip
-    document.getElementById("testelegal").innerText = cripDesc;
-
-    document.getElementById("texto").value = result;
-    input();
-}*/
-
-function apagar(){
-    document.getElementById("texto1").value = "";
-    document.getElementById("texto2").value = "";
-    result = "";
-    this.frase = "";
-    caracterInvalid = 0;
-}
