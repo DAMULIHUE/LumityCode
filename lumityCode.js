@@ -37,56 +37,55 @@ var splitter = new GraphemeSplitter();
 
 function criptografar(){
 
-    this.frase = document.getElementById("texto").value;
-    frase = frase.toLowerCase();
+    this.frase = document.getElementById("texto1").value;
+    this.frase = this.frase.toLowerCase();
     let fr = Object.entries(frase);
     
     fr.forEach(i =>{
         
-        if(alfabeto.hasOwnProperty(i[1]) && caracterInvalid == 0){
+        if(alfabeto.hasOwnProperty(i[1])){
             result += alfabeto[i[1]];
-        }else if (caracterInvalid == 0){
+        }else{
             console.log(`insira um valor válido: ${i[1]}`);
-            result = "";
-            document.getElementById("texto").value = "";
-            caracterInvalid++;
+            result += i[1];
         }
     });
+
+    return result;
 }
 
 function descriptografar(){
 
-    this.frase = document.getElementById("texto").value;
+    this.frase = document.getElementById("texto2").value;
     let entries = Object.entries(alfabeto).map(([key, val]) => [val, key]);
     let graphemes = splitter.splitGraphemes(this.frase);
     let alfabetoEmoji = Object.fromEntries(entries);
     
     graphemes.forEach(i =>{
 
-        if(alfabetoEmoji.hasOwnProperty(i) && caracterInvalid == 0){
+        if(alfabetoEmoji.hasOwnProperty(i)){
             result += alfabetoEmoji[i];
-        }else if (caracterInvalid == 0){
+        }else{
             console.log(`insira um valor válido: ${i}`);
-            result = "";
-            document.getElementById("texto").value = "";
-            caracterInvalid++;
+            result += i;
         }
     });
+
+    return result;
 }
 
-function input(){
+function inputCrip(){
     result = "";
 
-    if (cripDesc == 1){
-        descriptografar();
-    }else{
-        criptografar();
-    }
+    document.getElementById("texto2").value = criptografar();
+}
+function inputDesc(){
+    result = "";
 
-    document.getElementById("parag").innerText = result;
+    document.getElementById("texto1").value = descriptografar();
 }
 
-function criptografarDescrip(){
+/*function criptografarDescrip(){
     cripDesc = !cripDesc;
     //1 = desc
     //0 = crip
@@ -94,11 +93,11 @@ function criptografarDescrip(){
 
     document.getElementById("texto").value = result;
     input();
-}
+}*/
 
 function apagar(){
-    document.getElementById("parag").innerText = "";
-    document.getElementById("texto").value = "";
+    document.getElementById("texto1").value = "";
+    document.getElementById("texto2").value = "";
     result = "";
     this.frase = "";
     caracterInvalid = 0;
