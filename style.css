@@ -1,0 +1,18 @@
+.caixasdetraducao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+}
+
+.caixasdetraducao textarea{
+  resize: none;
+  border-radius: 5px;
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .caixasdetraducao{
+    flex-direction: column;
+  }
+}
