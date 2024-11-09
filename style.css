@@ -16,3 +16,10 @@
     flex-direction: column;
   }
 }
+
+img {
+  align-items: bottom;
+  max-width: 100%;
+  height: auto;
+  display:none
+}
