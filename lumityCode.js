@@ -80,10 +80,11 @@ function inputCrip(){
     document.getElementById("texto2").value = criptografar();
 
     const texto1 = document.getElementById("texto1");
+    const textoL = texto1.value.toLowerCase();
     const img = document.getElementById("img");
     const textimg = document.getElementById("textimg");
 
-    if (texto1.value === "lany") {
+    if (textoL === "lany") {
         img.style.display = "block";
         textimg.style.display = "block";
     } else {
