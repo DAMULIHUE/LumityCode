@@ -11,15 +11,23 @@
   width: 100%;
 }
 
+img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 60%;
+  height: auto;
+  display:none
+}
+
 @media (max-width: 700px) {
   .caixasdetraducao{
     flex-direction: column;
   }
+  img{
+    max-width: 100%;
+    height: auto;
+    display:none
+  }
 }
 
-img {
-  align-items: bottom;
-  max-width: 100%;
-  height: auto;
-  display:none
-}
