@@ -78,19 +78,6 @@ function inputCrip(){
     result = "";
 
     document.getElementById("texto2").value = criptografar();
-
-    const texto1 = document.getElementById("texto1");
-    const textoL = texto1.value.toLowerCase();
-    const img = document.getElementById("img");
-    const textimg = document.getElementById("textimg");
-
-    if (textoL === "lany") {
-        img.style.display = "block";
-        textimg.style.display = "block";
-    } else {
-        img.style.display = "none";
-        textimg.style.display = "none";
-    }
 }
 function inputDesc(){
     result = "";
