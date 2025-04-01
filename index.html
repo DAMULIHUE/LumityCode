@@ -5,25 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LumityCode</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    
+    <link rel="stylesheet" href="style.css">    
 </head>
 <body>
-    <script src="
-        https://cdn.jsdelivr.net/npm/grapheme-splitter@1.0.4/index.min.js
-    "></script>
-    
-    <script src="lumityCode.js"></script>
+    <header>
+        <div class="textoHeader">
+            <h1>Lumity Code: Textos em emojis</h1>
+        </div>
+    </header>
+    <main>
+        <script src="
+            https://cdn.jsdelivr.net/npm/grapheme-splitter@1.0.4/index.min.js
+        "></script>
 
-    <div class="caixasdetraducao">
-        <textarea placeholder="Texto aqui" 
-            id="texto1" name="texto1" 
-            rows="5" cols="30" oninput="inputCrip()"></textarea>
+        <div class="caixasdetraducao">
+            <textarea placeholder="Texto aqui" 
+                id="texto1" name="texto1" 
+                rows="5" cols="30" oninput="inputCrip()"></textarea>
 
-        <textarea placeholder="Emojis aqui" 
-            id="texto2" name="texto2"
-            rows="5" cols="30" oninput="inputDesc()"></textarea>
-    </div>
+            <textarea placeholder="Emojis aqui" 
+                id="texto2" name="texto2"
+                rows="5" cols="30" oninput="inputDesc()"></textarea>
+        </div>
+
+        <script src="lumityCode.js"></script>
+    </main>
 </body>
 </html>

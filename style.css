@@ -1,3 +1,10 @@
+
+
+.textoHeader {
+  margin:0px;
+  text-align: center;
+}
+
 .caixasdetraducao {
   display: flex;
   justify-content: center;
